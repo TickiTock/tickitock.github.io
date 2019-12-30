@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="假设我想下载某个文件，但本地下载速度非常的慢(或者没时间)那么在这时候，我会上去我的服务器手动输入wget xxxxx。是的速度很快，但是这样太麻烦了。后来，我了解到了AriaNg，转念一想，这便是我的解决方案。">
+<meta name="keywords" content="network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oh My Aria2c">
+<meta property="og:url" content="https://www.sfclub.cc/neko/-My-Aria2c/index.html">
+<meta property="og:site_name" content="Tick Tock">
+<meta property="og:description" content="假设我想下载某个文件，但本地下载速度非常的慢(或者没时间)那么在这时候，我会上去我的服务器手动输入wget xxxxx。是的速度很快，但是这样太麻烦了。后来，我了解到了AriaNg，转念一想，这便是我的解决方案。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35b803a46a876450.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35bed29a91755997.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35be8bdfbd262954.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35c41e1c0a552053.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35b3b65c2eb31712.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35c59847f1529556.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d35c5e53cb3793051.png">
+<meta property="og:updated_time" content="2019-11-23T19:46:00.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oh My Aria2c">
+<meta name="twitter:description" content="假设我想下载某个文件，但本地下载速度非常的慢(或者没时间)那么在这时候，我会上去我的服务器手动输入wget xxxxx。是的速度很快，但是这样太麻烦了。后来，我了解到了AriaNg，转念一想，这便是我的解决方案。">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/22/5d35b803a46a876450.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tick Tock" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://www.sfclub.cc/neko/-My-Aria2c/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Oh My Aria2c | Tick Tock</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tick Tock</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Logged.</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notice">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/notice" rel="section"><i class="menu-item-icon fa fa-fw fa-list"></i> <br>公告栏</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.sfclub.cc/neko/-My-Aria2c/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SeizedMeteor903">
+      <meta itemprop="description" content="aaaaaaaaaaaaaaaaa">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tick Tock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Oh My Aria2c
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-22 20:54:00" itemprop="dateCreated datePublished" datetime="2019-07-22T20:54:00+08:00">2019-07-22</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-24 03:46:00" itemprop="dateModified" datetime="2019-11-24T03:46:00+08:00">2019-11-24</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/knowledge/" itemprop="url" rel="index"><span itemprop="name">knowledge</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>假设我想下载某个文件，但本地下载速度非常的慢(或者没时间)<br>那么在这时候，我会上去我的服务器手动输入wget xxxxx。<br>是的速度很快，但是这样太<strong>麻烦</strong>了。后来，我了解到了AriaNg，转念一想，这便是我的解决方案。  </p>
+</blockquote>
+<a id="more"></a>
+<p>我认为在了解AriaNg之前,我们应该了解一下什么是Aria2</p>
+<h1 id="高效的下载工具——Aria2"><a href="#高效的下载工具——Aria2" class="headerlink" title="高效的下载工具——Aria2"></a>高效的下载工具——Aria2</h1><p>Aria2,是一个轻量，支持多种协议的下载工具。其命令行程序名称为”aria2c”.它支持 HTTP/HTTPS, FTP, SFTP, BitTorrent 和 Metalink协议。并且Aria2提供了RPC作为接口.<br>它的速度非常的快，甚至可以直逼磁盘写入速度.具体的原理笔者没有了解过(不会C++),但事实就是这样的。<br>通常来说,下载一个文件通常你只需要这样:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c http://xxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure>
+
+<p>So Ez!<br>但这样还不够，由于Aria2它自身开放了他的接口，可以使得Aria2成为一个高速的下载服务器一般，我们只需要找<em>一个调用Aria2 RPC的程序</em>就够了</p>
+<h2 id="Aria2c的gui——AriaNg"><a href="#Aria2c的gui——AriaNg" class="headerlink" title="Aria2c的gui——AriaNg"></a>Aria2c的gui——AriaNg</h2><ul>
+<li>并没有说只有AriaNg，也有其他的只不过我拿这个讲。</li>
+</ul>
+<p>Aria2Ng是个静态Web程序,你甚至可以直接拿他到你本机双击打开index.html使用。<br><img src="https://i.loli.net/2019/07/22/5d35b803a46a876450.png" alt="Aria2Ng"><br>现在，让我们开始搭建吧。</p>
+<h1 id="配置Aria2"><a href="#配置Aria2" class="headerlink" title="配置Aria2"></a>配置Aria2</h1><p>跑不掉的。你还是得要配置一下Aria2c,不然你也无法使用RPC<br>** 本文不讲如何安装Aria2,请自行谷歌 **</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">## &apos;#&apos;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##</span><br><span class="line">## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##</span><br><span class="line">## 转自Sanya的博客</span><br><span class="line"></span><br><span class="line">## 文件保存相关 ##</span><br><span class="line"></span><br><span class="line"># 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置  *</span><br><span class="line">dir=</span><br><span class="line"># 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M</span><br><span class="line">#disk-cache=32M</span><br><span class="line"># 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc</span><br><span class="line"># 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc</span><br><span class="line"># falloc和trunc则需要文件系统和内核支持</span><br><span class="line"># NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项</span><br><span class="line">file-allocation=none</span><br><span class="line"># 断点续传</span><br><span class="line">continue=true</span><br><span class="line"></span><br><span class="line">## 下载连接相关 ##</span><br><span class="line"></span><br><span class="line"># 最大同时下载任务数, 运行时可修改, 默认:5</span><br><span class="line">max-concurrent-downloads=1</span><br><span class="line"># 同一服务器连接数, 添加时可指定, 默认:1 </span><br><span class="line">max-connection-per-server=5</span><br><span class="line"># 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M</span><br><span class="line"># 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载</span><br><span class="line">min-split-size=10M</span><br><span class="line"># 单个任务最大线程数, 添加时可指定, 默认:5</span><br><span class="line">split=2</span><br><span class="line"># 整体下载速度限制, 运行时可修改, 默认:0</span><br><span class="line">#max-overall-download-limit=0</span><br><span class="line"># 单个任务下载速度限制, 默认:0</span><br><span class="line">#max-download-limit=0</span><br><span class="line"># 整体上传速度限制, 运行时可修改, 默认:0</span><br><span class="line">#max-overall-upload-limit=0</span><br><span class="line"># 单个任务上传速度限制, 默认:0</span><br><span class="line">#max-upload-limit=0</span><br><span class="line"># 禁用IPv6, 默认:false</span><br><span class="line">#disable-ipv6=true</span><br><span class="line"></span><br><span class="line">## 进度保存相关 ##</span><br><span class="line"></span><br><span class="line"># 从会话文件中读取下载任务 </span><br><span class="line">input-file=/etc/aria2/aria2.session</span><br><span class="line"># 在Aria2退出时保存`错误/未完成`的下载任务到会话文件 </span><br><span class="line">save-session=/etc/aria2/aria2.session</span><br><span class="line"># 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0</span><br><span class="line">#save-session-interval=60</span><br><span class="line"></span><br><span class="line">## RPC相关设置 ##</span><br><span class="line"></span><br><span class="line"># 启用RPC, 默认:false</span><br><span class="line">enable-rpc=true</span><br><span class="line"># 允许所有来源, 默认:false</span><br><span class="line">rpc-allow-origin-all=true</span><br><span class="line"># 允许非外部访问, 默认:false</span><br><span class="line">rpc-listen-all=true</span><br><span class="line"># 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同</span><br><span class="line">#event-poll=select</span><br><span class="line"># RPC监听端口, 端口被占用时可以修改, 默认:6800</span><br><span class="line">#rpc-listen-port=6800</span><br><span class="line"># 设置的RPC授权令牌, v1.18.4新增功能, 取代 --rpc-user 和 --rpc-passwd 选项 *</span><br><span class="line">rpc-secret=HereYourKey</span><br><span class="line"># 设置的RPC访问用户名, 此选项新版已废弃, 建议改用 --rpc-secret 选项</span><br><span class="line">#rpc-user=&lt;USER&gt;</span><br><span class="line"># 设置的RPC访问密码, 此选项新版已废弃, 建议改用 --rpc-secret 选项</span><br><span class="line">#rpc-passwd=&lt;PASSWD&gt;</span><br><span class="line"></span><br><span class="line">## BT/PT下载相关 ##</span><br><span class="line"></span><br><span class="line"># 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true</span><br><span class="line">#follow-torrent=true</span><br><span class="line"># BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999</span><br><span class="line">listen-port=51413</span><br><span class="line"># 单个种子最大连接数, 默认:55</span><br><span class="line">#bt-max-peers=55</span><br><span class="line"># 打开DHT功能, PT需要禁用, 默认:true</span><br><span class="line">enable-dht=true</span><br><span class="line"># 打开IPv6 DHT功能, PT需要禁用</span><br><span class="line">#enable-dht6=false</span><br><span class="line"># DHT网络监听端口, 默认:6881-6999</span><br><span class="line">#dht-listen-port=6881-6999</span><br><span class="line"># 本地节点查找, PT需要禁用, 默认:false</span><br><span class="line">#bt-enable-lpd=false</span><br><span class="line"># 种子交换, PT需要禁用, 默认:true</span><br><span class="line">#enable-peer-exchange=false</span><br><span class="line"># 每个种子限速, 对少种的PT很有用, 默认:50K</span><br><span class="line">#bt-request-peer-speed-limit=50K</span><br><span class="line"># 客户端伪装, PT需要</span><br><span class="line">peer-id-prefix=-TR2770-</span><br><span class="line">user-agent=Transmission/2.77</span><br><span class="line"># 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0</span><br><span class="line">seed-ratio=0</span><br><span class="line"># 强制保存会话, 话即使任务已经完成, 默认:false</span><br><span class="line"># 较新的版本开启后会在任务完成后依然保留.aria2文件</span><br><span class="line">#force-save=false</span><br><span class="line"># BT校验相关, 默认:true</span><br><span class="line">#bt-hash-check-seed=true</span><br><span class="line"># 继续之前的BT任务时, 无需再次校验, 默认:false</span><br><span class="line">bt-seed-unverified=true</span><br><span class="line"># 保存磁力链接元数据为种子文件(.torrent文件), 默认:false</span><br><span class="line">bt-save-metadata=true</span><br></pre></td></tr></table></figure>
+
+<p>我在一些描述后面打了星号，分别是rpc-secret和dir。<br>首先来讲一下Dir,,AriaNg他是<em>不</em>支持在页面里面下载的，也就是说你只能通过其他的手段来下载缓存在服务器上头的文件。比方说:  </p>
+<ul>
+<li>rsync</li>
+<li>HTTP(S)</li>
+<li>SFTP</li>
+<li>FTP(s)</li>
+</ul>
+<p>之类的。在本文中，如果你打算用HTTP(S),那么请把这个dir写成到你打算提供缓存下载的<code>网站目录</code>，例如<code>/home/wwwroot/transfer.xx.io/</code><br>接着是rpc-secret.这个不用多讲，就是你Aria2的访问密钥。如果是私人使用请把它设置的复杂一点，如果是公共的随便写也行。到此Aria2的基本配置算是Completed。<br>接下来,把配置保存到<code>/home/.aria2/aria2.conf</code>,输入<code>aria2c -c</code>，你就可以看到Aria2在正常运行。<br><img src="https://i.loli.net/2019/07/22/5d35bed29a91755997.png" alt="Aria在正常运行.png"><br>如果不是这样请尝试检查权限问题或者配置问题。  </p>
+<h2 id="带到河边做成Systemd吧"><a href="#带到河边做成Systemd吧" class="headerlink" title="带到河边做成Systemd吧"></a>带到河边做成Systemd吧</h2><p>虽然加上-D参数或者再配合一下crond也能做到后台运行，但问题是你关不掉，就算关了你也得手动再打一次命令重启就显得很囊肿..而且你还看不到logs<s>貌似-D是没有有价值的logs的</s>  </p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Aria2</span><br><span class="line"><span class="attr">After</span>=network.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=forking</span><br><span class="line"><span class="attr">ExecStart</span>=/usr/bin/aria2c -D -c</span><br><span class="line"><span class="attr">ExecReload</span>=/usr/bin/kill -HUP <span class="variable">$MAINPID</span></span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>把这上面一大段写进<code>/etc/systemd/system/aria2c.service</code>,接下来使用<code>systemctl daemon-reload &amp;&amp; systemctl enable aria2c --now</code>重载你的systemd管理工具以及设置开机自启动&amp;&amp;启动服务(如果提示不知道什么是now那就是时候更新你的systemctl了。）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start/stop/restart/status/enable/disable aria2c # 管理服务</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2019/07/22/5d35be8bdfbd262954.png" alt="Aria2c在正常运行.png"><br>好，现在我们的Aria2部署到此结束！  </p>
+<h1 id="部署AriaNg"><a href="#部署AriaNg" class="headerlink" title="部署AriaNg"></a>部署AriaNg</h1><p>AriaNg部署起来非常简单。你甚至都不需要搭建到服务器上。假设这是公共场景好了趴<br>还记得刚刚你配置Aria2.conf的时候那个<code>dir=xxx</code>吗？我在那里设置的是我的网站目录，<code>/home/wwwroot/transfer.xx.io</code><br>进入这个目录，使用<code>aria2c https://github.com/mayswind/AriaNg/releases/download/1.1.1/AriaNg-1.1.1-AllInOne.zip</code>下载最新的AriaNg(2019/7/22).<br>接着输入<code>unzip ./AriaNg-(这里按下tab)</code>,回车你就可以解压这玩意。接着，使用<code>mv ./AriaNg(按下tab) ./AriaNg  
+回车。现在AriaNg就部署了90%了  
+笔者的这个目录站点分别对应transfer.xx.io。以及笔者在这里把目录命名成了</code>XiaoCNiubi<code>,接下来访问</code>transfer.xx.io/XiaoCNiubi<code>就进入了AriaNg.你会发现一直有个加载中，不要管他直奔左边</code>系统设置.AriaNg设置<code>(如果你的浏览器是中文)  
+  点进去之后，你应该能在上面的栏里找到带有</code>localhost的项`,点进去，编辑信息。<br>  <img src="https://i.loli.net/2019/07/22/5d35c41e1c0a552053.png" alt="AriaNg-RPC-CONFIG.png"><br>  like this.<br>配置完成之后，刷新页面。过不了多久你就可以看到右下的Aria2 状态变绿<br>——除非你没有配置好。</p>
+<h1 id="部署完成"><a href="#部署完成" class="headerlink" title="部署完成!"></a>部署完成!</h1><p>主要速度还是看你服务器的速度而定的。举个例子<br>FireFox下载Sublime Text 3:<br><img src="https://i.loli.net/2019/07/22/5d35b3b65c2eb31712.png" alt="FireFox downloading st3 on local PC"><br>接下来是离线下载(速度实在是太快了..我都没来得及反应过来都已经下好了，看控制台日志将就吧)：<br><img src="https://i.loli.net/2019/07/22/5d35c59847f1529556.png" alt="Remote_Fast_Download.png"><br>Aria2Ng:<br><img src="https://i.loli.net/2019/07/22/5d35c5e53cb3793051.png" alt="Snipaste_2019-07-22_22-18-52.png"><br>接下来，我只需要用<code>transfer.xx.io/Sublime Text Build 3207 x64 Setup.exe</code>这个URL就可以下载回来了。(这里其实没把回转下载速度表达出来..)</p>
+<h2 id="额外章节-定时清理"><a href="#额外章节-定时清理" class="headerlink" title="额外章节:定时清理"></a>额外章节:定时清理</h2><p>把这行命令加进crond里头即可:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm `ls path/to/downloads | grep -v ariang的目录名称`</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Leaked</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://www.sfclub.cc/neko/-My-Aria2c/" title="Oh My Aria2c">https://www.sfclub.cc/neko/-My-Aria2c/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/network/" rel="tag"># network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/neko/What-is-Google-BBR/" rel="next" title="What is Google BBR">
+                <i class="fa fa-chevron-left"></i> What is Google BBR
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/neko/宝塔开源了/" rel="prev" title="宝塔" 开源"了">
+                宝塔"开源"了 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">SeizedMeteor903</p>
+              <div class="site-description motion-element" itemprop="description">aaaaaaaaaaaaaaaaa</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://qnickx.top" title="https://qnickx.top" rel="noopener" target="_blank">qnickx</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.lxns.org" title="https://blog.lxns.org" rel="noopener" target="_blank">Lxns</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#高效的下载工具——Aria2"><span class="nav-number">1.</span> <span class="nav-text">高效的下载工具——Aria2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Aria2c的gui——AriaNg"><span class="nav-number">1.1.</span> <span class="nav-text">Aria2c的gui——AriaNg</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置Aria2"><span class="nav-number">2.</span> <span class="nav-text">配置Aria2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#带到河边做成Systemd吧"><span class="nav-number">2.1.</span> <span class="nav-text">带到河边做成Systemd吧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署AriaNg"><span class="nav-number">3.</span> <span class="nav-text">部署AriaNg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署完成"><span class="nav-number">4.</span> <span class="nav-text">部署完成!</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#额外章节-定时清理"><span class="nav-number">4.1.</span> <span class="nav-text">额外章节:定时清理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TickiTock</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '81143321f3849777ea1a',
+    clientSecret: '343c98e40cd7b1288c8ad7b96a6ab3389be6dbaf',
+    repo: 'Comment',
+    owner: 'TickiTock',
+    admin: ['TickiTock'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

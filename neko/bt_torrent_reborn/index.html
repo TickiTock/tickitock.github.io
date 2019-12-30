@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="每次下到死种就很气。心里十分难受以至于我去补种(手动狗头)">
+<meta name="keywords" content="bt-torrent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复活你的BT种子!">
+<meta property="og:url" content="https://www.sfclub.cc/neko/bt_torrent_reborn/index.html">
+<meta property="og:site_name" content="Tick Tock">
+<meta property="og:description" content="每次下到死种就很气。心里十分难受以至于我去补种(手动狗头)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/09/08/oX8eiKvHb1Qs2gU.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/08/UAcwZEWRKtL95p1.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/08/jacBfgXiQodCtFk.png">
+<meta property="og:updated_time" content="2019-09-07T17:12:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="复活你的BT种子!">
+<meta name="twitter:description" content="每次下到死种就很气。心里十分难受以至于我去补种(手动狗头)">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/08/oX8eiKvHb1Qs2gU.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tick Tock" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://www.sfclub.cc/neko/bt_torrent_reborn/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>复活你的BT种子! | Tick Tock</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tick Tock</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Logged.</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notice">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/notice" rel="section"><i class="menu-item-icon fa fa-fw fa-list"></i> <br>公告栏</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.sfclub.cc/neko/bt_torrent_reborn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SeizedMeteor903">
+      <meta itemprop="description" content="aaaaaaaaaaaaaaaaa">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tick Tock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">复活你的BT种子!
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-07 23:52:00" itemprop="dateCreated datePublished" datetime="2019-09-07T23:52:00+08:00">2019-09-07</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-08 01:12:58" itemprop="dateModified" datetime="2019-09-08T01:12:58+08:00">2019-09-08</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/knowledge/" itemprop="url" rel="index"><span itemprop="name">knowledge</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>每次下到死种就很气。心里十分难受以至于我去补种(手动狗头)</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="在补之前"><a href="#在补之前" class="headerlink" title="在补之前.."></a>在补之前..</h1><p>停停停!! 在说补种之前,先来了解一些和BT有关的东西.</p>
+<h2 id="Peer"><a href="#Peer" class="headerlink" title="Peer"></a>Peer</h2><p>节点,在BT中起到提供下载的角色<br>每个使用BT的人都是Peer，类似于一个包含了服务端和客户端的功能的程序<br>Peer的作用主要是提供碎片文件给用户。Peer越多下载的越快，这是因为BT基于的网络结构(P2P),下载的人越多，碎片文件就可以从更多的源下载，增加下载速度。  </p>
+<h2 id="Tracker"><a href="#Tracker" class="headerlink" title="Tracker"></a>Tracker</h2><p>Tracker,追踪器<br>要连接上一个Peer，当然不能靠ZMap穷举全球IP。因此 Tracker提供的服务不是下载，而是帮助你接入BT网络.他会给予你一些信息，其中包括了其他Peer的IP.</p>
+<h2 id="种子里面包含了什么"><a href="#种子里面包含了什么" class="headerlink" title="种子里面包含了什么?"></a>种子里面包含了什么?</h2><p>里面当然不会有Peer的IP，因为Peer的IP是Tracker提供的<br>—&gt; 所以自然是一些Tracker服务器的IP啊<br>除了Tracker的IP之外还不够。我们还需要一样东西，就是数据指纹<br>在种子里,每个碎片的摘要&amp;名字都写在里面，这是为了防止有人恶意攻击BT网络–验证数据是否有效<br>还有一些其他的信息，比如说备用下载地址之类的，不打算讲</p>
+<h1 id="为什么需要补种"><a href="#为什么需要补种" class="headerlink" title="为什么需要补种"></a>为什么需要补种</h1><p>我觉得大部分人看完上面那些东西可能会有一个疑问，就是”既然这样,那么为什么要补种呢？”<br>很简单,因为速度慢。为什么会慢?也很简单，因为内置Tracker给的Peer大部分连接速度很慢，甚至早就失效了。<br>因此，我们需要修改BT种子，往里头加入更多的Tracker服务器，让你连接上的Peer更多~</p>
+<h2 id="常用的Tracker服务器列表"><a href="#常用的Tracker服务器列表" class="headerlink" title="常用的Tracker服务器列表"></a>常用的Tracker服务器列表</h2><p>Tracker也不一定就稳定。建议从一些专门的地方找,例如<br><a href="https://github.com/ngosang/trackerslist" target="_blank" rel="noopener">https://github.com/ngosang/trackerslist</a></p>
+<h2 id="如何进行补种"><a href="#如何进行补种" class="headerlink" title="如何进行补种"></a>如何进行补种</h2><p>大概的思路是：</p>
+<ul>
+<li>用种子编辑器打开种子</li>
+<li>修改Tracker服务器列表  </li>
+</ul>
+<p>然后就好啦！<br>这里使用<br><code>https://github.com/GerryFerdinandus/bittorrent-tracker-editor/releases</code><br>的BT编辑器做例子,GitHub下载慢的可以用我<a href="https://tranzfer.sfclub.cc/trackereditor_win32.zip" target="_blank" rel="noopener">在服务器上缓存的版本</a><br>版本号: Win32 1.33.0.beta.5<br>解压后里面有个add_trackers.txt，里面是一些预设好的Tracker服务器，不管他，用我们从Github/或者其他什么地方获取到的<br>点击左上角File-&gt;Open one torrent file<br><img src="https://i.loli.net/2019/09/08/oX8eiKvHb1Qs2gU.png" alt><br>然后选中我们需要补种的BT文件,打开，把第一个编辑框里面的内容删掉，填充上我们的Tracker服务器列表。(下面会有一些种子里面的tracker服务器,如果种子完全死的可以删了，或者用一些检测工具检测一下)<br><img src="https://i.loli.net/2019/09/08/UAcwZEWRKtL95p1.png" alt></p>
+<ul>
+<li>如果你能连的上newTrackOn,你也可以点击右上<code>Online Check</code>的<code>Check Status Trackers</code>.它会自动帮你填tracker服务器</li>
+</ul>
+<p>最后保存：<br><img src="https://i.loli.net/2019/09/08/jacBfgXiQodCtFk.png" alt><br>结尾会有几个弹窗 按着回车就好。</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><p>这样就完事了.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Leaked</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://www.sfclub.cc/neko/bt_torrent_reborn/" title="复活你的BT种子!">https://www.sfclub.cc/neko/bt_torrent_reborn/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/bt-torrent/" rel="tag"># bt-torrent</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/neko/反-向-优-化/" rel="next" title="反 向 优 化">
+                <i class="fa fa-chevron-left"></i> 反 向 优 化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/neko/绕过AdFly的强制订阅跳转/" rel="prev" title="绕过AdFly的强制订阅跳转">
+                绕过AdFly的强制订阅跳转 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">SeizedMeteor903</p>
+              <div class="site-description motion-element" itemprop="description">aaaaaaaaaaaaaaaaa</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://qnickx.top" title="https://qnickx.top" rel="noopener" target="_blank">qnickx</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.lxns.org" title="https://blog.lxns.org" rel="noopener" target="_blank">Lxns</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在补之前"><span class="nav-number">1.</span> <span class="nav-text">在补之前..</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Peer"><span class="nav-number">1.1.</span> <span class="nav-text">Peer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tracker"><span class="nav-number">1.2.</span> <span class="nav-text">Tracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#种子里面包含了什么"><span class="nav-number">1.3.</span> <span class="nav-text">种子里面包含了什么?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么需要补种"><span class="nav-number">2.</span> <span class="nav-text">为什么需要补种</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的Tracker服务器列表"><span class="nav-number">2.1.</span> <span class="nav-text">常用的Tracker服务器列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何进行补种"><span class="nav-number">2.2.</span> <span class="nav-text">如何进行补种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number">3.</span> <span class="nav-text">END</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TickiTock</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '81143321f3849777ea1a',
+    clientSecret: '343c98e40cd7b1288c8ad7b96a6ab3389be6dbaf',
+    repo: 'Comment',
+    owner: 'TickiTock',
+    admin: ['TickiTock'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

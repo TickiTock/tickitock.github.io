@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="很多时候,我们(至少我)会在一些我的世界服务端整合包里面看到Yum。我觉得，它功能强大，是在制作服务端过程中的好工具，但是总有异样的声音。例如，在一个”noobie”问问题的时候，通常总会有人跳出来说:”删除垃圾Yum即可解决”。像是成了一个梗，起到了偶尔误导不明真相的新手的作用。 我认为，这个Yum不是香不香的问题，而是真的用好它了吗?">
+<meta name="keywords" content="minecraft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="这个Yum,它香吗?">
+<meta property="og:url" content="https://www.sfclub.cc/neko/is_yum_yummy/index.html">
+<meta property="og:site_name" content="Tick Tock">
+<meta property="og:description" content="很多时候,我们(至少我)会在一些我的世界服务端整合包里面看到Yum。我觉得，它功能强大，是在制作服务端过程中的好工具，但是总有异样的声音。例如，在一个”noobie”问问题的时候，通常总会有人跳出来说:”删除垃圾Yum即可解决”。像是成了一个梗，起到了偶尔误导不明真相的新手的作用。 我认为，这个Yum不是香不香的问题，而是真的用好它了吗?">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload.cc/i1/2019/12/06/phb7l5.png">
+<meta property="og:image" content="https://data.yumc.pw/plugin/yum/lag.png">
+<meta property="og:image" content="https://data.yumc.pw/plugin/yum/event.png">
+<meta property="og:image" content="https://data.yumc.pw/plugin/yum/info.png">
+<meta property="og:image" content="https://upload.cc/i1/2019/12/06/yYkbnI.png">
+<meta property="og:updated_time" content="2019-12-06T05:45:24.204Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="这个Yum,它香吗?">
+<meta name="twitter:description" content="很多时候,我们(至少我)会在一些我的世界服务端整合包里面看到Yum。我觉得，它功能强大，是在制作服务端过程中的好工具，但是总有异样的声音。例如，在一个”noobie”问问题的时候，通常总会有人跳出来说:”删除垃圾Yum即可解决”。像是成了一个梗，起到了偶尔误导不明真相的新手的作用。 我认为，这个Yum不是香不香的问题，而是真的用好它了吗?">
+<meta name="twitter:image" content="https://upload.cc/i1/2019/12/06/phb7l5.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tick Tock" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://www.sfclub.cc/neko/is_yum_yummy/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>这个Yum,它香吗? | Tick Tock</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tick Tock</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Logged.</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-notice">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/notice" rel="section"><i class="menu-item-icon fa fa-fw fa-list"></i> <br>公告栏</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.sfclub.cc/neko/is_yum_yummy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SeizedMeteor903">
+      <meta itemprop="description" content="aaaaaaaaaaaaaaaaa">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tick Tock">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">这个Yum,它香吗?
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-15 04:14:27" itemprop="dateCreated datePublished" datetime="2019-11-15T04:14:27+08:00">2019-11-15</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-12-06 13:45:24" itemprop="dateModified" datetime="2019-12-06T13:45:24+08:00">2019-12-06</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>很多时候,我们(至少我)会在一些我的世界服务端整合包里面看到Yum。我觉得，它功能强大，是在制作服务端过程中的好工具，但是总有异样的声音。例如，在一个”noobie”问问题的时候，通常总会有人跳出来说:”删除垃圾Yum即可解决”。像是成了一个梗，起到了偶尔误导不明真相的新手的作用。</p>
+<p>我认为，这个Yum不是香不香的问题，而是真的用好它了吗?</p>
+<a id="more"></a>
+
+<h1 id="What-is-YUM"><a href="#What-is-YUM" class="headerlink" title="What is YUM"></a>What is YUM</h1><p>Yum 是一个<code>全能的服务器插件管理工具</code>,它可以做到”PlugMan”的所有功能（甚至要更好）。</p>
+<h1 id="为什么Yum会有人黑"><a href="#为什么Yum会有人黑" class="headerlink" title="为什么Yum会有人黑"></a>为什么Yum会有人黑</h1><p>主要是这些功能被人抹黑。</p>
+<h2 id="网络拦截功能"><a href="#网络拦截功能" class="headerlink" title="网络拦截功能"></a>网络拦截功能</h2><p>很多插件都需要连接网络。检查更新，插件验证系统…各种理由,甚至也可能有木马通信。</p>
+<p>而这个功能会把插件对外的通信都拦截下来,因此可能会导致检查更新失败，控制台报错刷屏，插件验证系统失效，无法使用插件…等等。因此一些服主在删除Yum后会发现一些功能能用了，便把问题定位到yum上。是的没错，二分之一是因为Yum默认开启了这个功能，但另外一半则是服主自己不懂得配置。  </p>
+<p>那么所有需要检查更新，验证的插件就必须得让服主关闭这个功能吗？不，不是这样的。Yum在提供这个功能的同时也提供了API,只需要通过API给你的（或者其他的）插件或者通过直接修改配置添加白/黑 名单/域名即可。</p>
+<p>通过API实现白名单的具体代码实现例子:<a href="https://github.com/Bkm016/TabooLib/blob/0bebf1db34b77dcf901322d31c2f6afc0965158b/src/main/scala/io/izzel/taboolib/common/listener/ListenerNetWork.java" target="_blank" rel="noopener">https://github.com/Bkm016/TabooLib/blob/0bebf1db34b77dcf901322d31c2f6afc0965158b/src/main/scala/io/izzel/taboolib/common/listener/ListenerNetWork.java</a></p>
+<h2 id="任务异常监控"><a href="#任务异常监控" class="headerlink" title="任务异常监控"></a>任务异常监控</h2><p><img src="https://upload.cc/i1/2019/12/06/phb7l5.png" alt="TaskMonitor_Example"></p>
+<p>如图。这同时是我觉得比较好用的功能之一，因为Yum显示的有一些异常在服务端控制台看不见。但有时候，一些异常在Bukkit的任务调度器里出现，这意味着经常会有这样的信息刷出..</p>
+<p>Yum同时还有<code>能耗监控</code>,不要跟任务监控混淆，他是另一个东西。</p>
+<p>能耗监控只会在插件处理任务时耗时太长时提醒，且只有一行<del>所以比较少人黑</del></p>
+<p>笔者没有找到该功能的开关,所以..<strong>作为一个服主</strong>，尝试使用ConsoleSpamFix吧。</p>
+<h1 id="Is-yum-yummy"><a href="#Is-yum-yummy" class="headerlink" title="Is yum yummy?"></a>Is yum yummy?</h1><p>用的好就Yummy,用不好就….。</p>
+<h2 id="在用Yum之前"><a href="#在用Yum之前" class="headerlink" title="在用Yum之前"></a>在用Yum之前</h2><p>先搞懂你为什么要使用Yum。</p>
+<p>如果你只是为了热重载，那么你可以选择PlugMan，因为你或许用不上Yum其他功能。</p>
+<h2 id="Yum"><a href="#Yum" class="headerlink" title="Yum"></a>Yum</h2><p>如果你是一个纯粹的腐竹，那么你可以:</p>
+<ul>
+<li><p>用Yum来操控插件安装卸载删除</p>
+</li>
+<li><p>从dev.bukkit.org自动下载插件。</p>
+</li>
+<li><p>使用能耗监控得到插件事件处理耗时</p>
+</li>
+<li><p>安装配套的组件来拦截插件设置OP</p>
+</li>
+</ul>
+<p>如果你是一个开发者,Yum同样适合你。它能帮你找出隐藏的Bug，也能迅速预览插件的事件处理能耗。</p>
+<p><img src="https://data.yumc.pw/plugin/yum/lag.png" alt="Yum_LagMonitor"></p>
+<p><img src="https://data.yumc.pw/plugin/yum/event.png" alt></p>
+<p>它也支持查看插件信息</p>
+<p><img src="https://data.yumc.pw/plugin/yum/info.png" alt="Yum_Info"></p>
+<p>你也可以通过在游戏内使用Yum来运行shell/cmd</p>
+<p><img src="https://upload.cc/i1/2019/12/06/yYkbnI.png" alt="yum_f_help"></p>
+<p>看得出来。如果你要让Yum变得Yummy，你应该把权限控制的更紧——即使yum自带了拦截<code>rm -rf</code>命令对关键文件夹的操作。</p>
+<p>Yum本身是Yummy的，但如果你用的不好就Weird了。</p>
+<p>Links: <a href="https://coding.net/u/502647092/p/Yum/git" target="_blank" rel="noopener">Yum</a> <a href="https://www.mcbbs.net/thread-701333-1-1.html" target="_blank" rel="noopener">Yum-MCBBS宣传贴</a></p>
+<p>同步语风: 某人</p>
+<p><del>第一次写博..intro完全不知道要写啥</del></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>SeizedMeteor903</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://www.sfclub.cc/neko/is_yum_yummy/" title="这个Yum,它香吗?">https://www.sfclub.cc/neko/is_yum_yummy/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/minecraft/" rel="tag"># minecraft</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/neko/hexo-gitpage-go/" rel="next" title="搬迁到GithubPage踩的坑">
+                <i class="fa fa-chevron-left"></i> 搬迁到GithubPage踩的坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/neko/how_to_use_tags/" rel="prev" title="正确使用tags以创造更舒适的体验">
+                正确使用tags以创造更舒适的体验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">SeizedMeteor903</p>
+              <div class="site-description motion-element" itemprop="description">aaaaaaaaaaaaaaaaa</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://qnickx.top" title="https://qnickx.top" rel="noopener" target="_blank">qnickx</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.lxns.org" title="https://blog.lxns.org" rel="noopener" target="_blank">Lxns</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-YUM"><span class="nav-number">1.</span> <span class="nav-text">What is YUM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么Yum会有人黑"><span class="nav-number">2.</span> <span class="nav-text">为什么Yum会有人黑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络拦截功能"><span class="nav-number">2.1.</span> <span class="nav-text">网络拦截功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务异常监控"><span class="nav-number">2.2.</span> <span class="nav-text">任务异常监控</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Is-yum-yummy"><span class="nav-number">3.</span> <span class="nav-text">Is yum yummy?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在用Yum之前"><span class="nav-number">3.1.</span> <span class="nav-text">在用Yum之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yum"><span class="nav-number">3.2.</span> <span class="nav-text">Yum</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TickiTock</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '81143321f3849777ea1a',
+    clientSecret: '343c98e40cd7b1288c8ad7b96a6ab3389be6dbaf',
+    repo: 'Comment',
+    owner: 'TickiTock',
+    admin: ['TickiTock'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
