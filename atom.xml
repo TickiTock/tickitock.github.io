@@ -6,45 +6,15 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.sfclub.cc/"/>
-  <updated>2019-12-30T12:35:14.956Z</updated>
+  <updated>2019-12-29T01:54:18.251Z</updated>
   <id>https://www.sfclub.cc/</id>
   
   <author>
-    <name>SeizedMeteor903</name>
+    <name>iceBear67</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>不使用Tor的匿名浏览</title>
-    <link href="https://www.sfclub.cc/neko/%E4%B8%8D%E4%BD%BF%E7%94%A8Tor%E7%9A%84%E5%8C%BF%E5%90%8D%E6%B5%8F%E8%A7%88/"/>
-    <id>https://www.sfclub.cc/neko/不使用Tor的匿名浏览/</id>
-    <published>2019-12-23T10:40:00.000Z</published>
-    <updated>2019-12-30T12:35:14.956Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>匿名,我将它理解成大多数人不会知道你的真实身份。</p></blockquote><a id="more"></a><p>匿名是状态，达到这个状态你可以有很多的方法<br>例如: 使用Tor Browser浏览网页，这样你就有了在网络上的匿名。  </p><h1 id="代理程序"><a href="#代理程序" class="headerlink" title="代理程序"></a>代理程序</h1><p>Tor,I2P实质上也只是代理。代理在这一环节的作用，主要保障了服务无法通过IP追踪你。代理程序有很多，不仅仅只有这点。例如,一个又快,又安全的代理软件——ShadowSocks</p><h2 id="Shadowsocks"><a href="#Shadowsocks" class="headerlink" title="Shadowsocks"></a>Shadowsocks</h2><p><a href="https://github.com/shadowsocks/shadowsocks" target="_blank" rel="noopener">ShadowSocks</a>(ss)可以通过数据加密转发帮你突破封锁。<br>Ss不是某某服务商的软件,他是一个程序，需要人来搭建。搭建好SS的服务器本文统称为节点。节点分为这两类:</p><ul><li>公用节点(完全/半公开的)</li><li>私人节点(就自己小范围用的)</li></ul><p>一般来说，私人节点会比公用快很多,但有时候公用的速度也不比私人的差。（硬件，网络好)  </p><ul><li><p>为什么不用ShadowSocksR?</p><p>1.常年没有更新</p><p>2.我认为ss+simple obfs足够了</p></li><li><p>为什么不用ShadowSocksRR?</p><p>这玩意不见得有加什么新的feature..</p></li></ul><p>本文不叙述搭建Shadowsocks的二三事，请自行了解相关内容。</p><h2 id="代理节点的安全性"><a href="#代理节点的安全性" class="headerlink" title="代理节点的安全性"></a>代理节点的安全性</h2><p>用大流量的代理节点。</p><p>如果使用自己搭建的代理节点来匿名访问，那么安全性实际上不是很大。为什么呢？</p><p>网安可以调取各大出口运营商的路由日志，一查就知道什么ip在什么时候连接了什么ip了。即使是在国内使用了中转节点，一样是可以调出来的，只不过步骤多了一步。</p><p>所以，选择代理节点<strong>一定要</strong>选择那些每天用户负载较大的代理节点。</p><h1 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h1><p>假设你通过重重转发连接上了twitter，然后在某某干部发的推留一句<code>我是小明,卢本伟牛逼!</code>，你所有的努力都会白费——进局子蹲着吧。<br>代理程序给予你的只是网络上的匿名而已，其他决定性的细节可帮不了你。  </p><h2 id="身份隔离"><a href="#身份隔离" class="headerlink" title="身份隔离"></a>身份隔离</h2><p>*有的人一直都以为我是XX，但实际上呢？并不是。但是博客的确是其中一个人起的头，然后也有的人来一起写  *   </p><p>(语风同步真的累…)</p><p>就算你用上了代理，但如果你在twitter的名字和你在其他平台的名字都有特征，那也不过是另一个<code>我是小明,卢本伟牛逼</code>罢了。  </p><h2 id="说话风格"><a href="#说话风格" class="headerlink" title="说话风格"></a>说话风格</h2><p>如果说话风格相似也是可以被猜出来的。</p><h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><p>不，并不是说看你用什么浏览器而判断你是谁。看的是从你浏览器找出来的特征。<br>举个例子，网站可以通过Cookies判断你是谁，从而绕过你上面的措施。<br>怎么防范呢？那这就要看浏览器了。除了刚刚比较温柔的方法，也有比较暴力的方法——用浏览器的漏洞之类的。所以选择浏览器也是比较重要的一道坎<br>假设你选了XX闭源浏览器，那你也说不定他在什么时候就偷偷些东西上传上去了。但如果你选一款开源的，风险会少的多。只要有一点后门或者漏洞，社区就会很快发现并且修复它(前提是知名度)。如果你问我，什么浏览器好呢？我会说，Mozilla FireFox.</p><h3 id="Moz-a-FireFox"><a href="#Moz-a-FireFox" class="headerlink" title="Moz://a FireFox"></a>Moz://a FireFox</h3><p>Firefox是一款开源浏览器，他们主张保护和不收集用户隐私，例如:</p><ul><li>Firefox在网站询问字体列表时会返回默认的字体列表</li><li>FireFox经常会用上来自Tor-Browser的反跟踪技术</li><li>……  </li></ul><p>以及，FireFox的内核是Rust写的，速度并不比Chrome的C++内核慢。<br>以及，上文提到的，<code>假设你的浏览器有漏洞怎么办</code>，FireFox会比Google更安全，因为语言优势。<br><a href="https://rustlang-cn.org/#why-rust" target="_blank" rel="noopener">Rust的丰富类型系统和所有权模型保证了内存安全性和线程安全性使您能够在编译时消除许多类错误。</a>  </p><h3 id="Chrome就不好吗"><a href="#Chrome就不好吗" class="headerlink" title="Chrome就不好吗?"></a>Chrome就不好吗?</h3><p>Chrome当然是一款优秀的浏览器,但我还是推荐FireFox.</p><p>Chrome本身就是谷歌的产物，光是Chromium就捆绑了大量Google服务的代码在里头，而且用户相对来说比FireFox多。如果有人要研究Chrome和Firefox的漏洞，哪个价值更高呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;匿名,我将它理解成大多数人不会知道你的真实身份。&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="knowledge" scheme="https://www.sfclub.cc/categories/knowledge/"/>
-    
-    
-      <category term="network" scheme="https://www.sfclub.cc/tags/network/"/>
-    
-      <category term="shadowsocks" scheme="https://www.sfclub.cc/tags/shadowsocks/"/>
-    
-      <category term="anonymous" scheme="https://www.sfclub.cc/tags/anonymous/"/>
-    
-      <category term="firefox" scheme="https://www.sfclub.cc/tags/firefox/"/>
-    
-  </entry>
   
   <entry>
     <title>正确使用tags以创造更舒适的体验</title>
@@ -71,9 +41,9 @@
     <link href="https://www.sfclub.cc/neko/is_yum_yummy/"/>
     <id>https://www.sfclub.cc/neko/is_yum_yummy/</id>
     <published>2019-11-14T20:14:27.000Z</published>
-    <updated>2019-12-06T05:45:24.204Z</updated>
+    <updated>2020-04-03T13:11:48.647Z</updated>
     
-    <content type="html"><![CDATA[<p>很多时候,我们(至少我)会在一些我的世界服务端整合包里面看到Yum。我觉得，它功能强大，是在制作服务端过程中的好工具，但是总有异样的声音。例如，在一个”noobie”问问题的时候，通常总会有人跳出来说:”删除垃圾Yum即可解决”。像是成了一个梗，起到了偶尔误导不明真相的新手的作用。</p><p>我认为，这个Yum不是香不香的问题，而是真的用好它了吗?</p><a id="more"></a><h1 id="What-is-YUM"><a href="#What-is-YUM" class="headerlink" title="What is YUM"></a>What is YUM</h1><p>Yum 是一个<code>全能的服务器插件管理工具</code>,它可以做到”PlugMan”的所有功能（甚至要更好）。</p><h1 id="为什么Yum会有人黑"><a href="#为什么Yum会有人黑" class="headerlink" title="为什么Yum会有人黑"></a>为什么Yum会有人黑</h1><p>主要是这些功能被人抹黑。</p><h2 id="网络拦截功能"><a href="#网络拦截功能" class="headerlink" title="网络拦截功能"></a>网络拦截功能</h2><p>很多插件都需要连接网络。检查更新，插件验证系统…各种理由,甚至也可能有木马通信。</p><p>而这个功能会把插件对外的通信都拦截下来,因此可能会导致检查更新失败，控制台报错刷屏，插件验证系统失效，无法使用插件…等等。因此一些服主在删除Yum后会发现一些功能能用了，便把问题定位到yum上。是的没错，二分之一是因为Yum默认开启了这个功能，但另外一半则是服主自己不懂得配置。  </p><p>那么所有需要检查更新，验证的插件就必须得让服主关闭这个功能吗？不，不是这样的。Yum在提供这个功能的同时也提供了API,只需要通过API给你的（或者其他的）插件或者通过直接修改配置添加白/黑 名单/域名即可。</p><p>通过API实现白名单的具体代码实现例子:<a href="https://github.com/Bkm016/TabooLib/blob/0bebf1db34b77dcf901322d31c2f6afc0965158b/src/main/scala/io/izzel/taboolib/common/listener/ListenerNetWork.java" target="_blank" rel="noopener">https://github.com/Bkm016/TabooLib/blob/0bebf1db34b77dcf901322d31c2f6afc0965158b/src/main/scala/io/izzel/taboolib/common/listener/ListenerNetWork.java</a></p><h2 id="任务异常监控"><a href="#任务异常监控" class="headerlink" title="任务异常监控"></a>任务异常监控</h2><p><img src="https://upload.cc/i1/2019/12/06/phb7l5.png" alt="TaskMonitor_Example"></p><p>如图。这同时是我觉得比较好用的功能之一，因为Yum显示的有一些异常在服务端控制台看不见。但有时候，一些异常在Bukkit的任务调度器里出现，这意味着经常会有这样的信息刷出..</p><p>Yum同时还有<code>能耗监控</code>,不要跟任务监控混淆，他是另一个东西。</p><p>能耗监控只会在插件处理任务时耗时太长时提醒，且只有一行<del>所以比较少人黑</del></p><p>笔者没有找到该功能的开关,所以..<strong>作为一个服主</strong>，尝试使用ConsoleSpamFix吧。</p><h1 id="Is-yum-yummy"><a href="#Is-yum-yummy" class="headerlink" title="Is yum yummy?"></a>Is yum yummy?</h1><p>用的好就Yummy,用不好就….。</p><h2 id="在用Yum之前"><a href="#在用Yum之前" class="headerlink" title="在用Yum之前"></a>在用Yum之前</h2><p>先搞懂你为什么要使用Yum。</p><p>如果你只是为了热重载，那么你可以选择PlugMan，因为你或许用不上Yum其他功能。</p><h2 id="Yum"><a href="#Yum" class="headerlink" title="Yum"></a>Yum</h2><p>如果你是一个纯粹的腐竹，那么你可以:</p><ul><li><p>用Yum来操控插件安装卸载删除</p></li><li><p>从dev.bukkit.org自动下载插件。</p></li><li><p>使用能耗监控得到插件事件处理耗时</p></li><li><p>安装配套的组件来拦截插件设置OP</p></li></ul><p>如果你是一个开发者,Yum同样适合你。它能帮你找出隐藏的Bug，也能迅速预览插件的事件处理能耗。</p><p><img src="https://data.yumc.pw/plugin/yum/lag.png" alt="Yum_LagMonitor"></p><p><img src="https://data.yumc.pw/plugin/yum/event.png" alt></p><p>它也支持查看插件信息</p><p><img src="https://data.yumc.pw/plugin/yum/info.png" alt="Yum_Info"></p><p>你也可以通过在游戏内使用Yum来运行shell/cmd</p><p><img src="https://upload.cc/i1/2019/12/06/yYkbnI.png" alt="yum_f_help"></p><p>看得出来。如果你要让Yum变得Yummy，你应该把权限控制的更紧——即使yum自带了拦截<code>rm -rf</code>命令对关键文件夹的操作。</p><p>Yum本身是Yummy的，但如果你用的不好就Weird了。</p><p>Links: <a href="https://coding.net/u/502647092/p/Yum/git" target="_blank" rel="noopener">Yum</a> <a href="https://www.mcbbs.net/thread-701333-1-1.html" target="_blank" rel="noopener">Yum-MCBBS宣传贴</a></p><p>同步语风: 某人</p><p><del>第一次写博..intro完全不知道要写啥</del></p>]]></content>
+    <content type="html"><![CDATA[<p>很多时候,我们(至少我)会在一些我的世界服务端整合包里面看到Yum。我觉得，它功能强大，是在制作服务端过程中的好工具，但是总有异样的声音。例如，在一个”noobie”问问题的时候，通常总会有人跳出来说:”删除垃圾Yum即可解决”。像是成了一个梗，起到了偶尔误导不明真相的新手的作用。</p><p>我认为，这个Yum不是香不香的问题，而是真的用好它了吗?</p><a id="more"></a><h1 id="What-is-YUM"><a href="#What-is-YUM" class="headerlink" title="What is YUM"></a>What is YUM</h1><p>Yum 是一个<code>全能的服务器插件管理工具</code>,它可以做到”PlugMan”的所有功能（甚至要更好）。</p><h1 id="为什么Yum会有人黑"><a href="#为什么Yum会有人黑" class="headerlink" title="为什么Yum会有人黑"></a>为什么Yum会有人黑</h1><p>主要是这些功能被人抹黑。</p><h2 id="网络拦截功能"><a href="#网络拦截功能" class="headerlink" title="网络拦截功能"></a>网络拦截功能</h2><p>很多插件都需要连接网络。检查更新，插件验证系统…各种理由,甚至也可能有木马通信。</p><p>而这个功能会把插件对外的通信都拦截下来,因此可能会导致检查更新失败，控制台报错刷屏，插件验证系统失效，无法使用插件…等等。因此一些服主在删除Yum后会发现一些功能能用了，便把问题定位到yum上。是的没错，二分之一是因为Yum默认开启了这个功能，但另外一半则是服主自己不懂得配置。  </p><p>那么所有需要检查更新，验证的插件就必须得让服主关闭这个功能吗？不，不是这样的。Yum在提供这个功能的同时也提供了API,只需要通过API给你的（或者其他的）插件或者通过直接修改配置添加白/黑 名单/域名即可。</p><p>通过API实现白名单的具体代码实现例子:<a href="https://github.com/Bkm016/TabooLib/blob/0bebf1db34b77dcf901322d31c2f6afc0965158b/src/main/scala/io/izzel/taboolib/common/listener/ListenerNetWork.java" target="_blank" rel="noopener">https://github.com/Bkm016/TabooLib/blob/0bebf1db34b77dcf901322d31c2f6afc0965158b/src/main/scala/io/izzel/taboolib/common/listener/ListenerNetWork.java</a></p><h2 id="任务异常监控"><a href="#任务异常监控" class="headerlink" title="任务异常监控"></a>任务异常监控</h2><p><img src="https://upload.cc/i1/2019/12/06/phb7l5.png" alt="TaskMonitor_Example"></p><p>如图。这同时是我觉得比较好用的功能之一，因为Yum显示的有一些异常在服务端控制台看不见。但有时候，一些异常在Bukkit的任务调度器里出现，这意味着经常会有这样的信息刷出..</p><p>Yum同时还有<code>能耗监控</code>,不要跟任务监控混淆，他是另一个东西。</p><p>能耗监控只会在插件处理任务时耗时太长时提醒，且只有一行<del>所以比较少人黑</del></p><p>笔者没有找到该功能的开关,所以..<strong>作为一个服主</strong>，尝试使用ConsoleSpamFix吧。</p><h1 id="Is-yum-yummy"><a href="#Is-yum-yummy" class="headerlink" title="Is yum yummy?"></a>Is yum yummy?</h1><p>用的好就Yummy,用不好就….。</p><h2 id="在用Yum之前"><a href="#在用Yum之前" class="headerlink" title="在用Yum之前"></a>在用Yum之前</h2><p>先搞懂你为什么要使用Yum。</p><p>如果你只是为了热重载，那么你可以选择PlugMan，因为你或许用不上Yum其他功能。</p><h2 id="Yum"><a href="#Yum" class="headerlink" title="Yum"></a>Yum</h2><p>如果你是一个纯粹的腐竹，那么你可以:</p><ul><li><p>用Yum来操控插件安装卸载删除</p></li><li><p>从dev.bukkit.org自动下载插件。</p></li><li><p>使用能耗监控得到插件事件处理耗时</p></li><li><p>安装配套的组件来拦截插件设置OP</p></li></ul><p>如果你是一个开发者,Yum同样适合你。它能帮你找出隐藏的Bug，也能迅速预览插件的事件处理能耗。</p><p><img src="https://data.yumc.pw/plugin/yum/lag.png" alt="Yum_LagMonitor"></p><p><img src="https://data.yumc.pw/plugin/yum/event.png" alt></p><p>它也支持查看插件信息</p><p><img src="https://data.yumc.pw/plugin/yum/info.png" alt="Yum_Info"></p><p>你也可以通过在游戏内使用Yum来运行shell/cmd</p><p><img src="https://upload.cc/i1/2019/12/06/yYkbnI.png" alt="yum_f_help"></p><p>看得出来。如果你要让Yum变得Yummy，你应该把权限控制的更紧——即使yum自带了拦截<code>rm -rf</code>命令对关键文件夹的操作。</p><p>Yum本身是Yummy的，但如果你用的不好就Weird了。</p><p>Links: <a href="https://coding.net/u/502647092/p/Yum/git" target="_blank" rel="noopener">Yum</a> <a href="https://www.mcbbs.net/thread-701333-1-1.html" target="_blank" rel="noopener">Yum-MCBBS宣传贴</a></p>]]></content>
     
     <summary type="html">
     
@@ -199,28 +169,6 @@
     
     
       <category term="minecraft" scheme="https://www.sfclub.cc/tags/minecraft/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>宝塔&quot;开源&quot;了</title>
-    <link href="https://www.sfclub.cc/neko/%E5%AE%9D%E5%A1%94%E5%BC%80%E6%BA%90%E4%BA%86/"/>
-    <id>https://www.sfclub.cc/neko/宝塔开源了/</id>
-    <published>2019-08-03T07:27:00.000Z</published>
-    <updated>2019-08-13T06:40:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><p>readonly的代码<br><img src="https://i.loli.net/2019/08/03/lYODnuQ4Xm23akH.png" alt="readonly的代码"><br>这是怎么导入的?<br><img src="https://i.loli.net/2019/08/03/6NXpf5w7rMteJWu.png" alt="这是怎么导入的?"><br>python哪来的分号?<br><img src="https://i.loli.net/2019/08/03/lewqsTaSUYdmPIZ.png" alt="哪来的分号.png"><br>在？你分号漏了<br><img src="https://i.loli.net/2019/08/03/nh6z7yd2orIwS8p.png" alt="啧.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;readonly的代码&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/08/03/lYODnuQ4Xm23akH.png&quot; alt=&quot;readonly的代码&quot;&gt;&lt;br&gt;这是怎么导入的?&lt;br&gt;&lt;img src=
-      
-    
-    </summary>
-    
     
   </entry>
   
