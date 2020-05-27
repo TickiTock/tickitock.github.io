@@ -94,22 +94,21 @@
 
 
 
-  <meta name="description" content="服务器没打算续费，感觉用GitHub Page完全能满足我的需求了，何必花这个冤枉钱?    Github Page走起!">
+  <meta name="description" content="我不是罗志祥，但我想让你成为罗志祥。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搬迁到GithubPage踩的坑">
-<meta property="og:url" content="https://www.sfclub.cc/neko/hexo-gitpage-go/index.html">
+<meta property="og:title" content="日程表和计划书">
+<meta property="og:url" content="https://www.sfclub.cc/neko/%E6%97%A5%E7%A8%8B%E8%A1%A8%E5%92%8C%E8%AE%A1%E5%88%92%E4%B9%A6/index.html">
 <meta property="og:site_name" content="Tick Tock">
-<meta property="og:description" content="服务器没打算续费，感觉用GitHub Page完全能满足我的需求了，何必花这个冤枉钱?    Github Page走起!">
+<meta property="og:description" content="我不是罗志祥，但我想让你成为罗志祥。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2019/10/27/H6K4E12wPFdusOt.png">
-<meta property="og:image" content="https://i.loli.net/2019/10/27/fsOnymvrT6XFRNb.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/10/27/z6J35ykS1pFq8BY.jpg">
-<meta property="article:published_time" content="2019-10-27T06:16:14.000Z">
-<meta property="article:modified_time" content="2019-10-27T06:36:56.000Z">
+<meta property="article:published_time" content="2020-05-26T13:31:27.000Z">
+<meta property="article:modified_time" content="2020-05-26T14:31:12.034Z">
 <meta property="article:author" content="iceBear67">
-<meta property="article:tag" content="gitpage,githubpage,hexo">
+<meta property="article:tag" content="coding">
+<meta property="article:tag" content="minecraft">
+<meta property="article:tag" content="tickitock">
+<meta property="article:tag" content="oof">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2019/10/27/H6K4E12wPFdusOt.png">
 
 
   
@@ -121,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="https://www.sfclub.cc/neko/hexo-gitpage-go/"/>
+  <link rel="canonical" href="https://www.sfclub.cc/neko/%E6%97%A5%E7%A8%8B%E8%A1%A8%E5%92%8C%E8%AE%A1%E5%88%92%E4%B9%A6/"/>
 
 
 
@@ -131,7 +130,7 @@
   };
 </script>
 
-  <title>搬迁到GithubPage踩的坑 | Tick Tock</title>
+  <title>日程表和计划书 | Tick Tock</title>
   
 
 
@@ -330,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.sfclub.cc/neko/hexo-gitpage-go/"/>
+    <link itemprop="mainEntityOfPage" href="https://www.sfclub.cc/neko/%E6%97%A5%E7%A8%8B%E8%A1%A8%E5%92%8C%E8%AE%A1%E5%88%92%E4%B9%A6/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="iceBear67"/>
@@ -347,7 +346,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">搬迁到GithubPage踩的坑
+          <h2 class="post-title" itemprop="name headline">日程表和计划书
 
               
             
@@ -373,7 +372,7 @@
                 
               
 
-              <time title="创建时间：2019-10-27 14:16:14 / 修改时间：14:36:56" itemprop="dateCreated datePublished" datetime="2019-10-27T14:16:14+08:00">2019-10-27</time>
+              <time title="创建时间：2020-05-26 21:31:27 / 修改时间：22:31:12" itemprop="dateCreated datePublished" datetime="2020-05-26T21:31:27+08:00">2020-05-26</time>
             </span>
           
 
@@ -415,45 +414,69 @@
       
 
       
-        <p>服务器没打算续费，感觉用GitHub Page完全能满足我的需求了，何必花这个冤枉钱?   </p>
-<p>Github Page走起!</p>
+        <p>我不是罗志祥，但我想让你成为罗志祥。  </p>
 <a id="more"></a>
 
-<h1 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h1><p>本人踩到的一些坑..(不看官方WIKI的后果)</p>
-<h2 id="Depolyer早就解耦了"><a href="#Depolyer早就解耦了" class="headerlink" title="Depolyer早就解耦了!"></a>Depolyer早就解耦了!</h2><p>把博客搬运上G<del>ay</del> ithub Page的过程貌似蛮简单的.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/TickiTock/tickitock.github.io</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p>这样应该就行了8  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br><span class="line">(node:8584) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</span><br><span class="line">ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
-
-<p>？？？  </p>
-<p>这是咋回事,赶快去翻翻<a href="https://hexo.io/docs/one-command-deployment" target="_blank" rel="noopener">官方文档  </a></p>
-<p><img src="https://i.loli.net/2019/10/27/H6K4E12wPFdusOt.png" alt="Snipaste_2019-10-26_16-37-41.png"></p>
-<p>原来是解耦了…那就跑一遍<code>npm install hexo-depolyer-git --save</code>呗  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-depolyer-git --save</span><br><span class="line">npm ERR! code E404</span><br><span class="line">npm ERR! 404 Not Found - GET https://registry.npmjs.org/hexo-depolyer-git - Not found</span><br><span class="line">npm ERR! 404</span><br><span class="line">npm ERR! 404  <span class="string">'hexo-depolyer-git@latest'</span> is not <span class="keyword">in</span> the npm registry.</span><br><span class="line">npm ERR! 404 You should bug the author to publish it (or use the name yourself!)</span><br><span class="line">npm ERR! 404</span><br><span class="line">npm ERR! 404 Note that you can also install from a</span><br><span class="line">npm ERR! 404 tarball, folder, http url, or git url.</span><br><span class="line"></span><br><span class="line">npm ERR! A complete <span class="built_in">log</span> of this run can be found <span class="keyword">in</span>:</span><br><span class="line">npm ERR!     C:\Users\nope\AppData\Roaming\npm-cache\_logs\2019-10-27T03_46_51_358Z-debug.log</span><br></pre></td></tr></table></figure>
-
-<p>怎么会没有呢?那干脆直接从github拉好了:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ npm install https://github.com/hexojs/hexo-deployer-git.git --save</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@1.2.9: wanted &#123;<span class="string">"os"</span>:<span class="string">"darwin"</span>,<span class="string">"arch"</span>:<span class="string">"any"</span>&#125; (current: &#123;<span class="string">"os"</span>:<span class="string">"win32"</span>,<span class="string">"arch"</span>:<span class="string">"x64"</span>&#125;)</span><br><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.1 (node_modules\hexo-deployer-git\node_modules\fsevents):</span><br><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform <span class="keyword">for</span> fsevents@2.1.1: wanted &#123;<span class="string">"os"</span>:<span class="string">"darwin"</span>,<span class="string">"arch"</span>:<span class="string">"any"</span>&#125; (current: &#123;<span class="string">"os"</span>:<span class="string">"win32"</span>,<span class="string">"arch"</span>:<span class="string">"x64"</span>&#125;)</span><br><span class="line"></span><br><span class="line">+ hexo-deployer-git@2.0.0</span><br><span class="line">added 21 packages from 20 contributors and audited 12407 packages <span class="keyword">in</span> 59.747s</span><br><span class="line">found 19 vulnerabilities (6 low, 6 moderate, 6 high, 1 critical)</span><br><span class="line">  run `npm audit fix` to fix them, or `npm audit` <span class="keyword">for</span> details</span><br></pre></td></tr></table></figure>
-
-<p>行8，那就这样了</p>
-<h2 id="语言全乱了"><a href="#语言全乱了" class="headerlink" title="语言全乱了"></a>语言全乱了</h2><p><img src="https://i.loli.net/2019/10/27/fsOnymvrT6XFRNb.jpg" alt="TIM图片20191027142855.jpg"></p>
-<p>妈耶??  </p>
-<p>这是啥语言…吓得我去看了看_config.yml  </p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author:</span> <span class="string">Somebody</span></span><br><span class="line"><span class="attr">language:</span> </span><br><span class="line"><span class="attr">timezone:</span> <span class="string">Asia/Shanghai</span></span><br></pre></td></tr></table></figure>
-
-<p>会不会是language留空的问题?  </p>
-<p>于是我填了个en,刷新之后..还是那样  </p>
-<p>后来运行了一下<code>hexo clean</code>再<code>hexo g</code>就完事了…</p>
-<h2 id="域名自己下了"><a href="#域名自己下了" class="headerlink" title="域名自己下了"></a>域名自己下了</h2><p>跑了几次<code>hexo d</code>之后，群里就有人反馈这个问题了</p>
-<p><img src="https://i.loli.net/2019/10/27/z6J35ykS1pFq8BY.jpg" alt="TIM图片20191027142855.jpg"></p>
-<p>wwwtf??  </p>
-<p>我一看，gitpage没显示我设置了域名  </p>
-<p>于是我去找了找解决方案  </p>
-<ul>
-<li>在source目录下创建了叫CNAME的文件</li>
-<li>在里面写上域名</li>
-</ul>
-<p>然后<code>hexo clean</code>&amp;&amp;<code>hexo g</code>就完事了..</p>
+<p> 距离上一次发布博客已经过了半年，本着想一月份匆忙赶一份新年祝福。但结果很显然，鸽了………..</p>
+<p>回到正题。正值大考来临之际，班上组织学生自己规划时间表。我粗略看了一下，大多数的表长这样：</p>
+<blockquote>
+<p>6:00 起床</p>
+<p>6:00-6:05 刷牙</p>
+<p>6:05-:6:20 吃早餐</p>
+<p>….</p>
+<p>11:20 放学</p>
+<p>11:20 ~ 11:40 到家</p>
+<p>11:40 ~ 12:00 吃完饭</p>
+<p>12:00 ~ 12:30 做作业</p>
+<p>12:30 ~ 13:50 休息</p>
+<p>….</p>
+</blockquote>
+<p>乍看是一份还不错的日程表，但实际上这个日程表往往会作废。</p>
+<h1 id="不实际"><a href="#不实际" class="headerlink" title="不实际"></a>不实际</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>6:00起床后直接去刷牙，显然是不合理的。或许你还会再赖床赖个几分钟，然后刷牙的时候也慢吞吞的挤牙膏….  </p>
+<p>但这可不是时间表里的预期情况。所以，不要设置这么不切实际的目标。设计目标应当参考<code>SMART</code>原则:</p>
+<blockquote>
+<p>SMART原则分别由「Specific、Measurable、Attainable、Relevant、Time－based」五个词组组成。这是订定目标时，必须谨记的五项要点。</p>
+<p>s即specific，代表具体的，指绩效考核要切中特定的工作指标，不能笼统；</p>
+<p>所谓明确就是要用具体的语言清楚地说明要达成的行为标准。好的目标计划，首先必须具体，自己明确到底应该做什么。</p>
+<p>例如：有的人说，我要开始减肥，我要学外语，这类目标一般都都不够具体，因为自己完全不知道如何开始。减肥有很多种方式，可以通过运动、节食甚至手术等方式。或者大家都知道通过运动减肥比较好，但是什么样的运动会更加有效呢？或着你个人更喜欢什么样的运动？慢跑？跳绳？有氧运动？瑜伽无氧运动？学习外语时候也是，你是想加强口语？阅读？还是想增强写作能力呢？</p>
+<p>越具体的目标，也越容易产生优秀的计划，也月容易去激发执行的动力。在将自己的目标在不断具体化过程中，慢慢地想的更全面、更深入，制定的目标也会越来越高</p>
+<p>m即measurable，代表可度量的，指绩效指标是数量化或者行为化的，验证这些绩效指标的数据或者信息是可以获得的；</p>
+<p>衡量性就是指目标应该是明确的，而不是模糊的。应该有一组明确的数据，作为衡量是否达成目标的依据。</p>
+<p>如果制定的目标没有办法衡量，就无法判断这个目标是否实现。目标的制定者必须定义，在什么情况下意味着目标的完成。</p>
+<p>比如，什么样的情况算是学好外语呢？学过这个目标细化成：我要背5000个托福的核心单词。这就是一个可衡量的目标。可以每天背完50个，或者100个，目标就可以宣告完成。所有缺乏可衡量性的目标几乎都是无法实现的，因为你完全没有办法去评估这件事情。</p>
+<p>a即attainable，代表可实现的，指绩效指标在付出努力的情况下可以实现，避免设立过高或过低的目标；</p>
+<p>目标是要能够被执行人所接受的，有实现可能的。比如说：我一个月要减掉20公斤脂肪，这就是一个几乎无法实现的目标。这种目标会使自己完全无法兑现承诺，从而大大挫伤自信心。如果这种情况经常出现就会削弱自己的执行力与责任心。当习惯了无法完成目标时，任何目标和计划对自己都是没有意义的。</p>
+<p>r即relevant，代表相关性，指实现此目标与其他目标的关联情况；</p>
+<p>目标的相关性是指实现此目标与其他目标的关联情况。如果实现了这个目标，但对其他的目标完全不相关，或者相关度很低，那这个目标即使被达到了，意义也不是很大。这个目标实现以后是否真的会给自己带来有意义的收获。</p>
+<p>比如一个美女想用瑜伽来减肥，但问题是瑜伽最擅长的是提高身体的柔韧性，并没有太好的减肥效果。听过一件最悲剧的事情是一个想考研的大学生，复习了一个假期的高等数学，报名的时候才发现他所要考试的方向根本不考数学，一个假期的时间完全浪费。</p>
+<p>t即time－based，代表有时限，注重完成绩效指标的特定期限。</p>
+</blockquote>
+<p><a href="https://www.jianshu.com/p/68cf05819745" target="_blank" rel="noopener">原文</a></p>
+<p>本文内容主要根据SMART部分内容进行展开。</p>
+<h2 id="突发情况"><a href="#突发情况" class="headerlink" title="突发情况"></a>突发情况</h2><h3 id="外界因素"><a href="#外界因素" class="headerlink" title="外界因素"></a>外界因素</h3><p>这是理想的日程表，但它在设计的时候是否考虑到了<code>我很累</code>,甚至是<code>被留堂</code>?</p>
+<p>适当添加一些时长，修改一下时间..有很多事情可以做。</p>
+<p>没有人知道一天中会发生什么。所以，在设计表的时候不要那么理想化认为<code>下课必定放学必定到家</code>。</p>
+<p>这样做往往会让你的日程表不够健壮，然后喜闻乐见的手忙脚乱&lt;3</p>
+<h3 id="额外任务"><a href="#额外任务" class="headerlink" title="额外任务"></a>额外任务</h3><p>这是很多人常常疏忽的一点——若任务A做完了，距离B还有一段时间，我应该做什么？</p>
+<p>不要让它成为你的借口！提前规划你的额外任务，或是直接休息。</p>
+<p>我推荐用一些”低功耗，低开销”的事情来作为你的”额外任务”，例如看书，或者是睡觉……</p>
+<h2 id="过于紧凑"><a href="#过于紧凑" class="headerlink" title="过于紧凑"></a>过于紧凑</h2><p>不要让任务表变得那么紧凑。</p>
+<p>留一些时间，给自己休息。但注意，休息也不能过于长或是过于短！如果认为<code>在额外任务休息够了所以短一点</code>，那么就正如前面所说的过于理想化了。</p>
+<h2 id="目标空虚"><a href="#目标空虚" class="headerlink" title="目标空虚"></a>目标空虚</h2><p>我认为，时间表应看作任务单的升级。所以时间表也应当指定一个（或多个）目标。</p>
+<p>但是有时候，一些任务并不是那么重要…</p>
+<p>像是 <code>出门散步</code>一类的事项，它不应当作为你的<code>目标</code>。应当看作为目标之外的解压和放松方式，当目标今日内能否完成不确定时，请适当舍弃一些不是那么重要的任务。</p>
+<p>还有一点：明确你的每日目标和适当奖赏自己可以让自己继续坚持下去（但请符合<strong>SMART</strong>原则）</p>
+<h2 id="灵活调度"><a href="#灵活调度" class="headerlink" title="灵活调度"></a>灵活调度</h2><p>不要把时间表看得太死。它应当是你完成目标的辅助工具。</p>
+<p>当你碰上特殊情况时，请适当的调度你的任务<strong>而不是</strong>盲目跟随，这样做只会让你越来越混乱。（除非你是死板的人习惯了死板的事物）</p>
+<p>不过，即使是”灵活调度”，时间表上仍需要刻意写 <code>如果XX 应XX</code>一类的提醒来限制自己的调度。这可以告诉你自己该做什么——<strong>不要让时间白白流走</strong></p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="记下来"><a href="#记下来" class="headerlink" title="记下来"></a>记下来</h2><p>把它记下来，随便什么。挂在你天天看得到的地方，或是使用TodoList App一类的，反正你每天都要看到它。  </p>
+<p>很好的例子：我的计划书被钉在没人看的班级公告栏上，接着它就做废了。</p>
+<h2 id="去做"><a href="#去做" class="headerlink" title="去做"></a>去做</h2><p>根据时间表去做，不要随便插戏份。</p>
+<p>时间表重在坚持和规划，希望你能坚持下去，成为时间管理大师。</p>
+<h1 id="计划书"><a href="#计划书" class="headerlink" title="计划书"></a>计划书</h1><p>你真的需要时间表吗？看到这里，请你闭上眼睛思考 10 秒钟..</p>
+<p>如果你只是为了完成每日的任务，请使用一份任务清单/计划书，列举每日的任务然后做完打个勾。</p>
+<p>相比时间表，计划书把时间的支配权完完全全送给了你，让你自己去调度时间去完成任务….是的，或许你本就不需要时间表。</p>
+<h1 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h1><p>祝你拥有美好的一天，欢迎在评论区留下你的想法。</p>
 
       
     </div>
@@ -488,7 +511,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://www.sfclub.cc/neko/hexo-gitpage-go/" title="搬迁到GithubPage踩的坑">https:&#x2F;&#x2F;www.sfclub.cc&#x2F;neko&#x2F;hexo-gitpage-go&#x2F;</a>
+    <a href="https://www.sfclub.cc/neko/%E6%97%A5%E7%A8%8B%E8%A1%A8%E5%92%8C%E8%AE%A1%E5%88%92%E4%B9%A6/" title="日程表和计划书">https:&#x2F;&#x2F;www.sfclub.cc&#x2F;neko&#x2F;%E6%97%A5%E7%A8%8B%E8%A1%A8%E5%92%8C%E8%AE%A1%E5%88%92%E4%B9%A6&#x2F;</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-creative-commons&quot;&gt;&lt;&#x2F;i&gt;BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -499,15 +522,6 @@
 
     <footer class="post-footer">
       
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/gitpage-githubpage-hexo/" rel="tag"># gitpage,githubpage,hexo</a>
-          
-        </div>
-      
 
       
       
@@ -517,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/neko/%E4%B8%96%E7%95%8C%E4%B8%8A%E6%9C%80%E6%97%A0%E8%81%8A%E7%9A%84%E7%BD%91%E7%AB%99%E5%92%8C%E6%9C%80%E6%97%A0%E8%81%8A%E7%9A%84%E4%BA%BA/" rel="next" title="世界上最无聊的网站和最无聊的人">
-                <i class="fa fa-chevron-left"></i> 世界上最无聊的网站和最无聊的人
+              <a href="/neko/how_to_use_tags/" rel="next" title="正确使用tags以创造更舒适的体验">
+                <i class="fa fa-chevron-left"></i> 正确使用tags以创造更舒适的体验
               </a>
             
           </div>
@@ -526,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/neko/is_yum_yummy/" rel="prev" title="这个Yum,它香吗?">
-                这个Yum,它香吗? <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -719,7 +729,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#坑"><span class="nav-number">1.</span> <span class="nav-text">坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Depolyer早就解耦了"><span class="nav-number">1.1.</span> <span class="nav-text">Depolyer早就解耦了!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言全乱了"><span class="nav-number">1.2.</span> <span class="nav-text">语言全乱了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名自己下了"><span class="nav-number">1.3.</span> <span class="nav-text">域名自己下了</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#不实际"><span class="nav-number">1.</span> <span class="nav-text">不实际</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-number">1.1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#突发情况"><span class="nav-number">1.2.</span> <span class="nav-text">突发情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外界因素"><span class="nav-number">1.2.1.</span> <span class="nav-text">外界因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#额外任务"><span class="nav-number">1.2.2.</span> <span class="nav-text">额外任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过于紧凑"><span class="nav-number">1.3.</span> <span class="nav-text">过于紧凑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标空虚"><span class="nav-number">1.4.</span> <span class="nav-text">目标空虚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#灵活调度"><span class="nav-number">1.5.</span> <span class="nav-text">灵活调度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实践"><span class="nav-number">2.</span> <span class="nav-text">实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#记下来"><span class="nav-number">2.1.</span> <span class="nav-text">记下来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去做"><span class="nav-number">2.2.</span> <span class="nav-text">去做</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计划书"><span class="nav-number">3.</span> <span class="nav-text">计划书</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Last"><span class="nav-number">4.</span> <span class="nav-text">Last</span></a></li></ol></div>
             
 
           </div>
